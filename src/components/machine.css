@@ -1,0 +1,37 @@
+.sampleContainer {
+	display: flex;
+	flex-direction: column;
+}
+
+.row {
+	display: flex;
+}
+
+.samplePad {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100px;
+	height: 100px;
+	border: thick solid black;
+	font-weight: bold;
+	margin: 10px;
+}
+
+.samplePad:active {
+	background-color: red;
+	animation-name: example;
+	animation-duration: 0.5s;
+}
+
+@keyframes example {
+	from {
+		background-color: yellow;
+		border-width: 0;
+	}
+
+	to {
+		background-color: green;
+		border-width: 30px;
+	}
+}
