@@ -1,0 +1,9 @@
+.trackLabel {
+    text-align: right;
+    padding-right: 10px;
+    width: 200px;
+}
+
+.activePad {
+    background-color: blue;
+}

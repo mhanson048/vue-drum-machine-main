@@ -42,18 +42,18 @@
 
 <script>
 
-const bass = require('../assets/Bass.mp3');
-const snare = require('../assets/Snare.mp3');
-const hiHatClosed = require('../assets/Hi Hat Closed.mp3');
-const hiHatOpen = require('../assets/Hi Hat Open.mp3');
-const ride = require('../assets/Ride.mp3');
-const crash = require('../assets/Crash.mp3');
-const china = require('../assets/China.mp3');
-const tom1 = require('../assets/Tom 1.mp3');
-const tom2 = require('../assets/Tom 2.mp3');
+const bass = require('../../assets/Bass.mp3');
+const snare = require('../../assets/Snare.mp3');
+const hiHatClosed = require('../../assets/Hi Hat Closed.mp3');
+const hiHatOpen = require('../../assets/Hi Hat Open.mp3');
+const ride = require('../../assets/Ride.mp3');
+const crash = require('../../assets/Crash.mp3');
+const china = require('../../assets/China.mp3');
+const tom1 = require('../../assets/Tom 1.mp3');
+const tom2 = require('../../assets/Tom 2.mp3');
 
 export default {
-    name: 'Machine',
+    name: 'PadMachine',
     data: () => ({
         bass,
         snare,
@@ -122,7 +122,7 @@ export default {
             });
         },
 
-         playTom2: function () {
+        playTom2: function () {
             let tom2 = new Audio(this.tom2);
             tom2.addEventListener("canplaythrough", () => {
                 tom2.play();
@@ -134,5 +134,5 @@ export default {
 </script>
 
 <style>
-@import './machine.css';
+@import './pad-machine.css';
 </style>
