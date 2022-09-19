@@ -93,8 +93,9 @@ export default {
     },
     watch: {
         playSpeed: function(val, oldVal) {
-            alert(val);
-            alert(oldVal);
+            const val1 = val;
+            const oldVal1 = oldVal;
+            val1 + oldVal1;
         }
     }
 }
