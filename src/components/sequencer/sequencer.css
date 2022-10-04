@@ -22,3 +22,8 @@ h1 {
     border: 2px solid slategray;
     margin-top: 3px;
 }
+
+.speedInput {
+    width: 30px;
+    margin-left: 20px;
+}

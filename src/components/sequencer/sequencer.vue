@@ -10,7 +10,7 @@
                     {{playing ? 'Stop' : 'Play'}}
                 </button>
 
-                <input v-model='playSpeed' />
+                <input class="speedInput" v-model='playSpeed' />
             </div>
 
             <TrackPads :sample="bass" label="Bass" :padLength="padLength" :padIndex="padIndex" ref="bassPads" />
@@ -20,8 +20,8 @@
             <TrackPads :sample="ride" label="Ride" :padLength="padLength" :padIndex="padIndex" ref="ridePads" />
             <TrackPads :sample="crash" label="Crash" :padLength="padLength" :padIndex="padIndex" ref="crashPads" />
             <TrackPads :sample="china" label="China" :padLength="padLength" :padIndex="padIndex" ref="chinaPads" />
-            <TrackPads :sample="tom1" label="Tom1" :padLength="padLength" :padIndex="padIndex" ref="tom1Pads" />
-            <TrackPads :sample="tom2" label="Tom2" :padLength="padLength" :padIndex="padIndex" ref="tom2Pads" />
+            <TrackPads :sample="tom1" label="Tom 1" :padLength="padLength" :padIndex="padIndex" ref="tom1Pads" />
+            <TrackPads :sample="tom2" label="Tom 2" :padLength="padLength" :padIndex="padIndex" ref="tom2Pads" />
 
         </div>
     </div>
@@ -30,6 +30,7 @@
 <script>
 
 import TrackPads from './track-pads/track-pads.vue';
+
 const bass = require('../../assets/Bass.mp3');
 const snare = require('../../assets/Snare.mp3');
 const hhClosed = require('../../assets/Hi Hat Closed.mp3');
@@ -89,6 +90,15 @@ export default {
                 clearInterval(interval);
                 this.padIndex = 0;
             }
+        },
+
+        sampleTriggered(label) {
+            this.$parent.sampleTriggered(label);
+        },
+
+        increment() {
+            this.$store.commit('increment');
+            console.log(this.$store.state.count)
         }
     },
     watch: {

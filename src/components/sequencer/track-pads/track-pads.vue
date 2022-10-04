@@ -38,14 +38,14 @@ export default {
     },
     methods: {
         playSample(index) {
-            // this.padIndex = index;
             if (this.pads[index]) {
                 let sample = new Audio(this.sample);
                 sample.addEventListener("canplaythrough", () => {
+                    this.$parent.sampleTriggered(this.label);
                     sample.play();
                 });
             }
-        },
+        }
     }
 }
 

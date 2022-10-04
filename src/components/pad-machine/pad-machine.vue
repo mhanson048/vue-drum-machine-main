@@ -4,35 +4,35 @@
 
         <div class="sampleContainer">
             <div class="row">
-                <div v-on:click='playBass' class="samplePad">
+                <div v-on:click='playBass' class="samplePad" ref="Bass">
                     Bass
                 </div>
-                <div v-on:click='playSnare' class="samplePad">
+                <div v-on:click='playSnare' class="samplePad" ref="Snare">
                     Snare
                 </div>
-                <div v-on:click='playHiHatClosed' class="samplePad">
+                <div v-on:click='playHiHatClosed' class="samplePad" ref="HH Closed">
                     Hi Hat Closed
                 </div>
             </div>
             <div class="row">
-                <div v-on:click='playHiHatOpen' class="samplePad">
+                <div v-on:click='playHiHatOpen' class="samplePad" ref="HH Open">
                     Hi Hat Open
                 </div>
-                <div v-on:click='playRide' class="samplePad">
+                <div v-on:click='playRide' class="samplePad" ref="Ride">
                     Ride
                 </div>
-                <div v-on:click='playCrash' class="samplePad">
+                <div v-on:click='playCrash' class="samplePad" ref="Crash">
                     Crash
                 </div>
             </div>
             <div class="row">
-                <div v-on:click='playChina' class="samplePad">
+                <div v-on:click='playChina' class="samplePad" ref="China">
                     China
                 </div>
-                <div v-on:click='playTom1' class="samplePad">
+                <div v-on:click='playTom1' class="samplePad" ref="Tom 1">
                     Tom 1
                 </div>
-                <div v-on:click='playTom2' class="samplePad">
+                <div v-on:click='playTom2' class="samplePad" ref="Tom 2">
                     Tom 2
                 </div>
             </div>
@@ -128,6 +128,13 @@ export default {
                 tom2.play();
             });
         },
+
+        sampleTriggered(label) {
+            this.$refs[label].style.backgroundColor = 'yellow';
+            setTimeout(() => {
+                this.$refs[label].style.backgroundColor = '';
+            }, 200)
+        }
     }
 }
 
